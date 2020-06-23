@@ -1,22 +1,15 @@
----
-title: 'iOS 自定义present动画（Swift）'
-date: 2020-06-23 17:34:46
-tags: []
-published: true
-hideInList: false
-feature: 
-isTop: false
----
 
 ## 前言
 
-    因为项目需要，Present动画需要支持下滑和侧滑返回，所以自定义了present动画。
+因为项目需要，Present动画需要支持下滑和侧滑返回，所以自定义了present动画。
 
 ## 正文
 
-    想要实现不一般又炫酷的present过渡动画，则必须使用自定义动画了，主要就是UIViewControllerAnimatedTransitioning这个协议中进行具体的动画操作。
-    网上也看过其他人写的，虽然确实挺花俏的，但是真正导入项目的时候有些不可用，最典型的问题就是影响了原有的代码，还有就是只支持一次性展示效果，达不到多层次效果，比如present一个controllerA之后，再从controllerA present到controllerB。为了完善一下，特地整理了一下项目中的分享给大家,demo地址
-    当然，为这个只是针对present模态展示的。总共用到的效果有定义为二种
+想要实现不一般又炫酷的present过渡动画，则必须使用自定义动画了，主要就是  UIViewControllerAnimatedTransitioning这个协议中进行具体的动画操作。
+
+网上也看过其他人写的，虽然确实挺花俏的，但是真正导入项目的时候有些不可用，最典型的问题就是 影响了原有的代码，还有就是只支持一次性展示效果，达不到多层次效果，比如present一个controllerA之后，再从controllerA present到controllerB。为了完善一下，特地整理了一下项目中的分享给大家,[Demo地址](https://github.com/mumuwanglin/YYPullDownGesture)
+
+当然，为这个只是针对present模态展示的。总共用到的效果有定义为二种
 
 ``` swift 
 enum YYTransformType: NSInteger {
