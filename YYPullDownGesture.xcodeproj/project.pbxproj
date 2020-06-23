@@ -13,6 +13,10 @@
 		847DAE6824A1FE4400665954 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847DAE6624A1FE4400665954 /* Main.storyboard */; };
 		847DAE6A24A1FE4500665954 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847DAE6924A1FE4500665954 /* Assets.xcassets */; };
 		847DAE6D24A1FE4500665954 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 847DAE6B24A1FE4500665954 /* LaunchScreen.storyboard */; };
+		847DAE7524A1FE7600665954 /* YYViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DAE7424A1FE7600665954 /* YYViewController.swift */; };
+		847DAEA624A1FF3B00665954 /* YYPresentAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DAEA324A1FF3B00665954 /* YYPresentAnimator.swift */; };
+		847DAEA724A1FF3B00665954 /* UIViewController+PanDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DAEA424A1FF3B00665954 /* UIViewController+PanDown.swift */; };
+		847DAEA824A1FF3B00665954 /* YYPresentAnminatorAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DAEA524A1FF3B00665954 /* YYPresentAnminatorAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		847DAE6924A1FE4500665954 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		847DAE6C24A1FE4500665954 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		847DAE6E24A1FE4500665954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		847DAE7424A1FE7600665954 /* YYViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YYViewController.swift; sourceTree = "<group>"; };
+		847DAEA324A1FF3B00665954 /* YYPresentAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYPresentAnimator.swift; sourceTree = "<group>"; };
+		847DAEA424A1FF3B00665954 /* UIViewController+PanDown.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+PanDown.swift"; sourceTree = "<group>"; };
+		847DAEA524A1FF3B00665954 /* YYPresentAnminatorAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YYPresentAnminatorAction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		847DAE5F24A1FE4400665954 /* YYPullDownGesture */ = {
 			isa = PBXGroup;
 			children = (
+				847DAEA224A1FF3B00665954 /* YYPanDowmPresent */,
 				847DAE6024A1FE4400665954 /* AppDelegate.swift */,
 				847DAE6224A1FE4400665954 /* SceneDelegate.swift */,
 				847DAE6424A1FE4400665954 /* ViewController.swift */,
+				847DAE7424A1FE7600665954 /* YYViewController.swift */,
 				847DAE6624A1FE4400665954 /* Main.storyboard */,
 				847DAE6924A1FE4500665954 /* Assets.xcassets */,
 				847DAE6B24A1FE4500665954 /* LaunchScreen.storyboard */,
 				847DAE6E24A1FE4500665954 /* Info.plist */,
 			);
 			path = YYPullDownGesture;
+			sourceTree = "<group>";
+		};
+		847DAEA224A1FF3B00665954 /* YYPanDowmPresent */ = {
+			isa = PBXGroup;
+			children = (
+				847DAEA424A1FF3B00665954 /* UIViewController+PanDown.swift */,
+				847DAEA324A1FF3B00665954 /* YYPresentAnimator.swift */,
+				847DAEA524A1FF3B00665954 /* YYPresentAnminatorAction.swift */,
+			);
+			path = YYPanDowmPresent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,8 +158,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				847DAEA724A1FF3B00665954 /* UIViewController+PanDown.swift in Sources */,
 				847DAE6524A1FE4400665954 /* ViewController.swift in Sources */,
+				847DAEA824A1FF3B00665954 /* YYPresentAnminatorAction.swift in Sources */,
+				847DAEA624A1FF3B00665954 /* YYPresentAnimator.swift in Sources */,
 				847DAE6124A1FE4400665954 /* AppDelegate.swift in Sources */,
+				847DAE7524A1FE7600665954 /* YYViewController.swift in Sources */,
 				847DAE6324A1FE4400665954 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

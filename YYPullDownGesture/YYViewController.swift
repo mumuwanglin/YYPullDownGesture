@@ -8,23 +8,51 @@
 
 import UIKit
 
-class YYViewController: UIViewController {
+private let YYSCreenWidth = UIScreen.main.bounds.size.width
+private let YYSCreenHeight = UIScreen.main.bounds.size.height
+private var instanceShouldRecognizeSimultaneously: Bool = false
 
+class YYViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = "第二个页面"
+        self.view.backgroundColor = .gray
+            
+        let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: YYSCreenWidth, height: YYSCreenHeight)) // Frame属性
+        scrollView.contentSize = CGSize(width: YYSCreenWidth, height: YYSCreenHeight * 2) // ContentSize属性
+        scrollView.backgroundColor = .gray
+        
+        scrollView.delegate = self
+        view.addSubview(scrollView)
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(clickDismissAction))
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @objc func clickDismissAction() {
+        self.dismiss(animated: true) {
+            self.removePresentAnimator()
+        }
     }
-    */
+}
 
+extension YYViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        // 管理状态不允许下拉刷新
+        if offsetY <= 0 {
+            instanceShouldRecognizeSimultaneously = true
+            scrollView.contentOffset = .zero
+        }else {
+            instanceShouldRecognizeSimultaneously = false
+        }
+    }
+}
+
+extension UIScrollView: UIGestureRecognizerDelegate {
+    // 允许同时触发多个手势
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return instanceShouldRecognizeSimultaneously
+    }
 }
